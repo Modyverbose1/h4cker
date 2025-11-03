@@ -1,0 +1,37 @@
+name: Validate JSON files
+
+on:
+  push:
+    paths:
+      - '**/*.json'
+  pull_request:
+    paths:
+      - '**/*.json'
+
+jobs:
+  validate-json:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Validate JSON files
+        run: |
+          set -euo pipefail
+          shopt -s globstar || true
+          files=(**/*.json)
+          if [ ${#files[@]} -eq 0 ]; then
+            echo "No JSON files to validate.";
+            exit 0;
+          fi
+          echo "Validating ${#files[@]} JSON files..."
+          for f in "${files[@]}"; do
+            echo " - $f"
+            python3 -m json.tool "$f" >/dev/null
+          done
+          echo "All JSON files valid."

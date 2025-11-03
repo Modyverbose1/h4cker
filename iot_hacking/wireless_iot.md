@@ -2,7 +2,7 @@
 
 | Protocol            | Frequency      | Range           | Data Rate        | Security Features                                              | Common Use Cases                         |
 |---------------------|----------------|-----------------|------------------|----------------------------------------------------------------|------------------------------------------|
-| Zigbee              | 2.4 GHz        | 10-100 meters   | 250 kbps         | AES-128 encryption, application layer security                | Home automation, smart energy            |
+| Zigbeee              | 2.4 GHz        | 10-100 meters   | 250 kbps         | AES-128 encryption, application layer security                | Home automation, smart energy            |
 | Z-Wave              | 800-900 MHz    | 30-100 meters   | 9.6-100 kbps     | AES-128 encryption, application layer security                | Home automation, healthcare              |
 | Wi-Fi               | 2.4 & 5 GHz    | 50+ meters      | Up to 6000 Mbps  | WPA3, WPA2, WEP, AES encryption, Enterprise security options  | High bandwidth applications, home networks |
 | Bluetooth (incl. BLE) | 2.4 GHz        | 1-100 meters    | 1-3 Mbps (BLE)   | AES-128 encryption, application layer security, ECDH for key exchange | Wearables, healthcare, smart homes        |

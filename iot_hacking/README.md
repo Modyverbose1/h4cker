@@ -252,7 +252,7 @@ The Internet of Things (IoT) Hacking Resources refer to an array of tools and fr
 
 ## Firmware Pentest
 
-- [Firmware analysis and reversing](https://www.youtube.com/watch?v=G0NNBloGIvs)
+- [Firmware analysis and reversing anonymously](https://www.youtube.com/watch?v=G0NNBloGIvs)
 - [Firmware emulation with QEMU](https://www.youtube.com/watch?v=G0NNBloGIvs)
 - [Dumping Firmware using Buspirate](http://iotpentest.com/tag/pulling-firmware/)
 
