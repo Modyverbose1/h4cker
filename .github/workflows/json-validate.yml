@@ -21,13 +21,15 @@ jobs:
           python-version: '3.x'
 
       - name: Validate JSON files
+        shell: bash
         run: |
           set -euo pipefail
+          # enable globstar for Bash if available
           shopt -s globstar || true
           files=(**/*.json)
           if [ ${#files[@]} -eq 0 ]; then
-            echo "No JSON files to validate.";
-            exit 0;
+            echo "No JSON files to validate."
+            exit 0
           fi
           echo "Validating ${#files[@]} JSON files..."
           for f in "${files[@]}"; do
