@@ -54,3 +54,17 @@ Security notes
 Support
 -------
 If you want, I can help create the App resource and set this up for you; you'll need to either: 1) add the `GITHUB_APP_ID` and `GITHUB_APP_PRIVATE_KEY` secrets to `The-Art-of-Hacking/h4cker`, or 2) create the App yourself and provide the values.
+
+Launching the workflow
+----------------------
+Once the app is set up and secrets are added, the workflow will run automatically on PR events.
+
+To manually trigger the workflow for a specific PR, use:
+```
+gh workflow run "Auto-merge baseline PRs via GitHub App" -f pr_number=<PR_NUMBER>
+```
+
+For example, for PR #420:
+```
+gh workflow run "Auto-merge baseline PRs via GitHub App" -f pr_number=420
+```
