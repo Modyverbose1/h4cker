@@ -1,0 +1,46 @@
+name: Auto-merge baseline PRs via GitHub App
+
+on:
+  pull_request:
+    types: [opened, synchronize, ready_for_review, labeled]
+  check_suite:
+    types: [completed]
+  check_run:
+    types: [completed]
+  pull_request_review:
+    types: [submitted]
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        description: 'PR number to process'
+        required: true
+        type: number
+
+permissions:
+  contents: read
+  pull-requests: read
+  checks: read
+
+jobs:
+  automerge-via-app:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install tools deps
+        run: npm --prefix tools install --no-audit --no-fund
+
+      - name: Run app approver & merger
+        env:
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GITHUB_SHA: ${{ github.sha }}
+          GITHUB_APP_ID: ${{ secrets.GITHUB_APP_ID }}
+          GITHUB_APP_PRIVATE_KEY: ${{ secrets.GITHUB_APP_PRIVATE_KEY }}
+        run: |
+          node tools/app_approve_merge.js
