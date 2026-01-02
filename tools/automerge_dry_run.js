@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+fin#!/usr/bin/env node
 // Local dry-run harness for the automerge-baseline workflow logic
 // Usage: node automerge_dry_run.js --pr=123 --branch=auto/update-secrets-baseline-1 --approved=true --perm=write --status=success --draft=false
 

@@ -21,15 +21,15 @@ Creating the GitHub App
 4. Under **Repository permissions** set:
    - Pull requests: **Read & Write**
    - Checks: **Read**
-   - Contents: **Read**
+   - Contents: **Read**i
 5. Leave the other permissions unset or at their minimum.
-6. Under **Where can this GitHub App be installed?** choose the repository and install it on `The-Art-of-Hacking/h4cker`.
+6. Under **Where can this GitHub App be installed?** choose the repository and install it on `Modyverbose1/The Art of Hacking/hacker`.
 7. Generate a private key for the App and download it (this is used to create signed JWTs to get installation tokens).
 8. Note the **App ID** shown on the App settings page.
 
 Add secrets to the repository
 -----------------------------
-Add these repository secrets to the destination repository (The-Art-of-Hacking/h4cker) or an organizational secret if preferred:
+Add these repository secrets to the destination repository (Modyverbose1/The Art of Hacking/hacker) or an organizational secret if preferred:
 - `GITHUB_APP_ID` - The numerical GitHub App ID
 - `GITHUB_APP_PRIVATE_KEY` - The private key PEM content (multi-line)
 
